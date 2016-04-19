@@ -237,6 +237,10 @@ class Scope
 
         $data = $this->serializeResource($serializer, $rawData);
 
+        if($data === null){
+            return null;
+        }
+
         // If the serializer wants the includes to be side-loaded then we'll
         // serialize the included data and merge it with the data.
         if ($serializer->sideloadIncludes()) {
